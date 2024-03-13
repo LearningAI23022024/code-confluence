@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="home.css">
+    <!-- Include the jsPDF library -->
+
+</head>
+
+<body>
+    <div class="container home-container">
+
+
+        <div class="left-card">
+            <div class="card left-card-content">
+                <h2>Event List</h2>
+                <div class="list-view" id="eventList">
+                    <!-- Events will be dynamically populated here -->
+                </div>
+            </div>
+
+            <!-- Pagination buttons -->
+            <div class="pagination">
+                <button id="prevPageBtn">Previous</button>
+                <span id="pageInfo"></span>
+                <button id="nextPageBtn">Next</button>
+            </div>
+        </div>
+
+
+
+
+        <div class="card right-card" id="eventDetails">
+            <!-- Event details will be displayed here -->
+        </div>
+
+
+
+        <!-- Modal -->
+        <div id="customDialog" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeDialog()">&times;</span>
+                <h2>Event Details</h2>
+                <p><strong>Title:</strong> <span id="modalEventTitle"></span></p>
+                <p><strong>Date:</strong> <span id="modalEventDate"></span></p>
+                <p><strong>Place:</strong> <span id="modalEventPlace"></span></p>
+
+                <div>
+                    <label for="modalName">Name:</label>
+                    <input type="text" id="modalName" name="name" required>
+                    <span id="nameError"></span>
+                </div>
+
+                <div>
+                    <label for="modalEmail">Email:</label>
+                    <input type="email" id="modalEmail" name="email" required>
+                    <span id="emailError"></span>
+                </div>
+
+
+                <div>
+                    <label for="modalMobile">Mobile:</label>
+                    <input type="tel" id="modalMobile" name="mobile" required>
+                    <span id="mobileError"></span>
+                </div>
+
+                <div>
+                    <label for="modalCompany">Company:</label>
+                    <input type="text" id="modalCompany" name="company">
+                </div>
+
+                <div>
+                    <label for="modalDesignation">Designation:</label>
+                    <input type="text" id="modalDesignation" name="designation">
+
+                </div>
+
+                <div> <button onclick="generatePass()">Download Pass</button> </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
